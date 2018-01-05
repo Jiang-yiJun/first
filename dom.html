@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<script type="text/javascript">
+	window.onload=function()
+	{
+		var oTab=document.getElementById('tab1');
+		var oBtn=document.getElementById('btn1');
+		var oName=document.getElementById('name');
+		var oAge=document.getElementById('age');
+		var id=oTab.tBodies[0].rows.length+1;
+
+		for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+		{
+			if(i%2)
+			{
+				oTab.tBodies[0].rows[i].style.background="";
+			}
+			else
+			{
+				oTab.tBodies[0].rows[i].style.background="#ccc";
+			}
+		}
+		oBtn.onclick=function()
+		{
+			var oTr=document.createElement('tr');
+
+			var oTd=document.createElement('td');
+			oTd.innerHTML=id++;
+			oTr.appendChild(oTd);
+
+			var oTd=document.createElement('td');
+			oTd.innerHTML=oName.value;
+			oTr.appendChild(oTd);
+
+			var oTd=document.createElement('td');
+			oTd.innerHTML=oAge.value;
+			oTr.appendChild(oTd);
+
+			oTab.tBodies[0].appendChild(oTr);
+		};
+	};
+</script>
+<body>
+	姓名:<input id="name" type="text"/>
+	年龄:<input id="age" type="text">
+	<input id="btn1" type="button" value="增加"/>
+	<table id="tab1" border="1" width="500px">
+		<thead>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>张三</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>李四</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>王五</td>
+				<td>22</td>
+			</tr>
+		</tbody>
+	</table>	
+</body>
+</html>
