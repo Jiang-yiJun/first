@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		font-size: 15px;
+		font-family: "微软雅黑";
+	}
+	ul{
+		list-style-type: none;
+	}
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	.main{
+		width: 310px;
+		height: 200px;
+		margin: 0 auto;
+		margin-top: 15px;
+	}
+	#titleCard{
+		border-bottom: 2px solid #8B4513;
+		width: 302px;
+		height: 32px;
+	}
+	#titleCard li{
+		display: inline-block;
+		border-bottom: 1px solid black;
+		border-bottom: none;
+		width: 70px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		margin-top: 5px;
+	}
+	#titleCard li.liActive{
+		border-top: 2px solid #8B4513;
+		border-bottom: 2px solid: white;
+	}
+	#titleCard li:hover{
+		cursor: pointer;
+	}
+	#content div{
+		width: 300px;
+		height: 150px;
+		border:1px solid green;
+		border-top:none;
+	}
+	#content div ul li{
+		line-height: 2em;
+		text-indent: 8px;
+	}
+	.show{display: block;}
+	.hide{display: none;}
+</style>
+<script type="text/javascript">
+	window.onload=function()
+	{
+		var titleCardChildren=document.getElementById("titleCard").children;
+		var contentChildren=document.getElementById("content").children;
+
+		for(var i=0;i<titleCardChildren.length;i++)
+		{
+			titleCardChildren[i].index=i;
+
+			titleCardChildren[i].onclick=function()
+			{
+				for(var i=0;i<contentChildren.length;i++)
+				{
+					contentChildren[i].className='hide';
+					titleCardChildren[i].className="";
+				}
+					contentChildren[this.index].className="show";
+					titleCardChildren[this.index].className="liActive"
+			}
+		}
+
+	}
+</script>
+</head>
+<body>
+	<div class="main">
+		<ul id="titleCard">
+			<li class="liActive">房产</li><li>家居</li><li>二手房</li>
+		</ul>
+	<div id="content">
+		<div class="show">
+			<ul>
+				<li><a href="#">275万购昌平邻铁三居 总价20万买一居</a></li>
+				<li><a href="#">200万内购五环三居 140万安家东三环</a></li>
+				<li><a href="#">北京首现零首付楼盘 53万购东5环50平</a></li>
+				<li><a href="#">京楼盘直降5000 中信府 公园楼王现房</a></li>
+			</ul>
+		</div>
+		<div class="hide">
+			<ul>
+				<li><a href="#">40平出租屋大改造 美少女的混搭小窝</a></li>
+				<li><a href="#">经典清新简欧爱家 90平老房焕发新生</a></li>
+				<li><a href="#">新中式的酷色温情 66平撞色活泼家居</a></li>
+				<li><a href="#">瓷砖就像选好老婆 卫生间烟道的设计</a></li>
+			</ul>
+		</div>
+		<div class="hide">
+			<ul>
+				<li><a href="#">通州豪华3居260万 二环稀缺2居250w甩</a></li>
+				<li><a href="#">西3环通透2居290万 130万2居限量抢购</a></li>
+				<li><a href="#">黄城根小学学区仅260万 121平70万抛!</a></li>
+				<li><a href="#">独家别墅280万 苏州桥2居优惠价248万</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

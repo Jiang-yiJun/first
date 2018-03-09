@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<style>
+	#div1 {width: 600px;height: 20px; border:1px solid #ccc;position: relative;margin: 10px auto;}
+	#div2 {width: 20px;height: 20px; border:1px solid blue;position: absolute;left: 0;top: 0;}
+	#div3 {width: 300px;height: 400px;border:1px solid #ccc;position: relative;overflow:hidden;}
+	#div4 {position: absolute;left: 0;top: 0; padding: 2px;}
+</style>
+<script>
+	window.onload=function()
+	{
+		var oDiv1=document.getElementById('div1');
+		var oDiv=document.getElementById('div2');
+		var oDiv3=document.getElementById('div3');
+		var oDiv4=document.getElementById('div4');
+
+		var disX=0;
+	//	var disY=0;
+		oDiv.onmousedown=function(ev)
+		{
+			var oEvent=ev||event;
+  
+			disX=oEvent.clientX-oDiv.offsetLeft;    //鼠标的位置-div的位置
+		//	disY=oEvent.clientY-oDiv.offsetTop;
+
+			document.onmousemove=function(ev)
+			{
+				var oEvent=ev||event;
+				var l=oEvent.clientX-disX;
+			//	var t=oEvent.clientY-disY;
+
+				if(l<0)
+				{
+					l=0;
+				}
+				else if(l>oDiv1.offsetWidth-oDiv.offsetWidth)
+				{
+					l=oDiv1.offsetWidth-oDiv.offsetWidth;
+				}
+
+				/*if(t<0)
+				{
+					t=0;
+				}
+				else if(t>document.documentElement.clientHeight-oDiv.offsetHeight)
+				{
+					t=document.documentElement.clientHeight-oDiv.offsetHeight;
+				}*/
+
+				oDiv.style.left=l+'px';
+				//oDiv.style.top=t+'px';
+
+				var scale=l/(oDiv1.offsetWidth-oDiv.offsetWidth);
+				document.title=scale;
+
+				oDiv4.style.top=-scale*(oDiv4.offsetHeight-oDiv3.offsetHeight)+"px";
+
+			};
+		
+			document.onmouseup=function()
+			{
+				document.onmousemove=null;
+				document.onmouseup=null;
+			};
+			return false;
+		};
+	};
+</script>
+</head>
+<body>
+<div id="div1">
+	<div id="div2"></div>
+</div>
+<div id="div3">
+	<div id="div4">
+  1. 创制。
+《诗·小雅·巷伯》：“寺人 孟子，作为此诗。”
+《礼记·乐记》：“然后圣人作为鞉、鼓、椌、楬、壎、箎。”
+《墨子·辞过》：“故圣王作为宫室，为宫室之法。”
+《史记·秦本纪》：“夫自上圣 黄帝 ，作为礼乐法度。”
+2. 所作所为；行为。
+唐 白居易《策项一》：“化之善否，系乎君之作为。”
+孙犁《秀露集·关于纪昀的通信》：“﹝ 高士奇 ﹞这种做法……如果我们只看他的文集能想象出他的这种作为吗？”
+3. 特指人力所为。
+元 刘壎 《隐居通议·樊宗师文》：“要亦出於自然，非作为也。”
+4. 指出力。
+《西游记》第八七回：“你若回心向善，趁早儿念佛看经，我还替你作为，汝若仍前不改……性命不能保矣。”
+5. 指人在事业中的建树与成就。
+梁斌《红旗谱》三五：“一个学生娃子，不过散散传单，喊喊口号，也不会有什么大的作为。”如：这几年，她在科研方面有作为。
+6.当做，做为。
+曹禺《北京人》第一幕：“这间小花厅，当年是作为一个谈机密话的地方。”
+柯岩《奇异的书简·追赶太阳的人一》：“于是我，作为一个作者，也马上看见了我笔下众多的人物，怎样纷纷纭纭地走上了他们每个人的人生之路。”
+1989年《睢县志·古建筑》：“袁家山（袁可立别业），……建国后，大殿左侧建厢房十间，作为文物陈列室。”
+7. 作假，实行欺骗。为，同“ 伪 ”。
+《礼记·月令》：“﹝季春之月﹞，毋或作为淫巧，以荡上心。” 郑玄注：“作为，为诈伪。”
+《汉书·五行志上》：“作为奸诈，以伤民财。”
+汉 徐干《中论·谴交》：“讵敢淫心舍力，作为非务，以害休功者乎？”[1] 
+1. 创制。
+《诗·小雅·巷伯》：“寺人 孟子，作为此诗。”
+《礼记·乐记》：“然后圣人作为鞉、鼓、椌、楬、壎、箎。”
+《墨子·辞过》：“故圣王作为宫室，为宫室之法。”
+《史记·秦本纪》：“夫自上圣 黄帝 ，作为礼乐法度。”
+2. 所作所为；行为。
+唐 白居易《策项一》：“化之善否，系乎君之作为。”
+孙犁《秀露集·关于纪昀的通信》：“﹝ 高士奇 ﹞这种做法……如果我们只看他的文集能想象出他的这种作为吗？”
+3. 特指人力所为。
+元 刘壎 《隐居通议·樊宗师文》：“要亦出於自然，非作为也。”
+4. 指出力。
+《西游记》第八七回：“你若回心向善，趁早儿念佛看经，我还替你作为，汝若仍前不改……性命不能保矣。”
+5. 指人在事业中的建树与成就。
+梁斌《红旗谱》三五：“一个学生娃子，不过散散传单，喊喊口号，也不会有什么大的作为。”如：这几年，她在科研方面有作为。
+6.当做，做为。
+曹禺《北京人》第一幕：“这间小花厅，当年是作为一个谈机密话的地方。”
+柯岩《奇异的书简·追赶太阳的人一》：“于是我，作为一个作者，也马上看见了我笔下众多的人物，怎样纷纷纭纭地走上了他们每个人的人生之路。”
+1989年《睢县志·古建筑》：“袁家山（袁可立别业），……建国后，大殿左侧建厢房十间，作为文物陈列室。”
+7. 作假，实行欺骗。为，同“ 伪 ”。
+《礼记·月令》：“﹝季春之月﹞，毋或作为淫巧，以荡上心。” 郑玄注：“作为，为诈伪。”
+《汉书·五行志上》：“作为奸诈，以伤民财。”
+汉 徐干《中论·谴交》：“讵敢淫心舍力，作为非务，以害休功者乎？”[1] 1. 创制。
+《诗·小雅·巷伯》：“寺人 孟子，作为此诗。”
+《礼记·乐记》：“然后圣人作为鞉、鼓、椌、楬、壎、箎。”
+《墨子·辞过》：“故圣王作为宫室，为宫室之法。”
+《史记·秦本纪》：“夫自上圣 黄帝 ，作为礼乐法度。”
+2. 所作所为；行为。
+唐 白居易《策项一》：“化之善否，系乎君之作为。”
+孙犁《秀露集·关于纪昀的通信》：“﹝ 高士奇 ﹞这种做法……如果我们只看他的文集能想象出他的这种作为吗？”
+3. 特指人力所为。
+元 刘壎 《隐居通议·樊宗师文》：“要亦出於自然，非作为也。”
+4. 指出力。
+《西游记》第八七回：“你若回心向善，趁早儿念佛看经，我还替你作为，汝若仍前不改……性命不能保矣。”
+5. 指人在事业中的建树与成就。
+梁斌《红旗谱》三五：“一个学生娃子，不过散散传单，喊喊口号，也不会有什么大的作为。”如：这几年，她在科研方面有作为。
+6.当做，做为。
+曹禺《北京人》第一幕：“这间小花厅，当年是作为一个谈机密话的地方。”
+柯岩《奇异的书简·追赶太阳的人一》：“于是我，作为一个作者，也马上看见了我笔下众多的人物，怎样纷纷纭纭地走上了他们每个人的人生之路。”
+1989年《睢县志·古建筑》：“袁家山（袁可立别业），……建国后，大殿左侧建厢房十间，作为文物陈列室。”
+7. 作假，实行欺骗。为，同“ 伪 ”。
+《礼记·月令》：“﹝季春之月﹞，毋或作为淫巧，以荡上心。” 郑玄注：“作为，为诈伪。”
+《汉书·五行志上》：“作为奸诈，以伤民财。”
+汉 徐干《中论·谴交》：“讵敢淫心舍力，作为非务，以害休功者乎？”[1] 
+	</div>
+</div>
+</body>
+</html>

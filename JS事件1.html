@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title></title>
 <style>
-	#div1 {width: 200px;height: 200px;background-color: red;position: absolute;}
+	#div1 {width: 200px;height: 200px; background: red;position: relative;}
 </style>
 <script>
 	window.onload=function()
@@ -13,11 +13,11 @@
 
 		var disX=0;
 		var disY=0;
-		document.onmousedown=function(ev)
+		oDiv.onmousedown=function(ev)
 		{
 			var oEvent=ev||event;
-
-			disX=oEvent.clientX-oDiv.offsetLeft;
+  
+			disX=oEvent.clientX-oDiv.offsetLeft;    //鼠标的位置-div的位置
 			disY=oEvent.clientY-oDiv.offsetTop;
 
 			document.onmousemove=function(ev)
@@ -47,6 +47,7 @@
 				oDiv.style.left=l+'px';
 				oDiv.style.top=t+'px';
 			};
+		
 			document.onmouseup=function()
 			{
 				document.onmousemove=null;
